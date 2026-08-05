@@ -1,42 +1,31 @@
-# بلاك سولز معربة — Black Souls (Arabic)
+# النفوس السوداء — النسخة العربية الكاملة
 
-نسخة عربية كاملة من لعبة **Black Souls** المصنوعة بمحرك **RPG Maker VX Ace**:
-الواجهة، الحوارات، الأسماء، وأسماء الخرائط كلها مترجمة إلى العربية، مع دعم كامل
-للحروف المترابطة والاتجاه من اليمين إلى اليسار (RTL).
+نسخة عربية كاملة من لعبة **Black Souls** المصنوعة بمحرك **RPG Maker VX Ace**.
+
+## عن النسخة
+
+- الواجهة، الحوارات، الأسماء، أسماء الخرائط، القوائم، ونظام القتال — كلها مترجمة إلى العربية.
+- دعم كامل لربط الحروف العربية والاتجاه الصحيح من اليمين إلى اليسار.
+- تعمل مباشرة بدون أي تثبيت أو ملفات RTP أو محرك RPG Maker.
 
 ## طريقة التشغيل
 
-1. فك ضغط الملف في أي مجلد.
-2. شغّل `Game.exe` بالنقر المزدوج.
+1. حمّل ملف **BLACK_SOULS_ARABIC_v1.0.0.zip** من صفحة الإصدارات (Releases).
+2. فك ضغط الملف في أي مجلد.
+3. شغّل `Game.exe` بالنقر المزدوج.
 
-لا حاجة لأي تثبيت، ولا لمحرك RPG Maker، ولا لملفات RTP — كل شيء مضمّن في
-مجلدات اللعبة ويعمل مباشرة على ويندوز.
+## المتطلبات
+
+- ويندوز 7 أو أحدث (32 أو 64 بت).
+- لا حاجة لأي برامج أو مكتبات إضافية — كل الملفات مضمّنة.
 
 ## ملاحظات
 
-- ملفات الحفظ تُنشأ تلقائيًا في مجلد `Save`.
-- لا تحذف مجلد `Fonts` ولا تعدّل السكربتات حتى يبقى النص العربي سليمًا.
+- ملفات الحفظ تُنشأ تلقائيًا في مجلد `Save` داخل مجلد اللعبة.
+- لا تحذف مجلد `Fonts` — يحتوي خطّي VL Gothic وCairo اللازمين لعرض العربية بشكل صحيح.
+- لا تعدّل السكربتات حتى يبقى النص العربي سليمًا ومرتبطًا.
 - اللعبة كاملة من البداية إلى النهاية وكل مشاهدها تعمل.
 
----
+## الترخيص
 
-# Black Souls (Arabic) — English
-
-Full Arabic localization of **Black Souls** (RPG Maker VX Ace): interface,
-dialogue, names and map names are translated, with proper Arabic letter
-joining and full RTL support.
-
-## How to run
-
-1. Extract the archive anywhere.
-2. Double-click `Game.exe`.
-
-No installation, no RPG Maker runtime, and no RTP required — all files are
-included and run directly on Windows.
-
-## Notes
-
-- Save files are created automatically in the `Save` folder.
-- Keep the `Fonts` folder and the scripts untouched for correct Arabic
-  rendering.
-- The game is fully playable from start to finish.
+راجع ملف `LICENSE`.
