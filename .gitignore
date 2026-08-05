@@ -1,0 +1,9 @@
+# save files
+Save/
+
+# archives
+*.zip
+
+# editor/OS junk
+Thumbs.db
+Desktop.ini
