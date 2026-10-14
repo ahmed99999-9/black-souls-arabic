@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+# repo-root shim (repo cleanup): run this script from any working
+# directory; all relative "Data/..." paths resolve to the project root.
+Dir.chdir(File.expand_path("../..", __dir__)) unless File.directory?("Data")
 # encoding: utf-8
 class Table; def self._load(s); o=allocate; o.instance_variable_set(:@_raw,s); o; end; def _dump(l); @_raw||""; end; end
 class Color; def self._load(s); allocate; end; def _dump(l); ""; end; def initialize(*a); end; end
@@ -38,17 +41,16 @@ module RPG
   class ME; end
   class MapInfo; end
 end
-require 'zlib'
 data = File.binread("Data/Scripts.rvdata2")
 scripts = Marshal.load(data)
-wanted = ["Arabic Reshaper", "Arabic Fix 7", "Arabic Fix 8", "Window Title Fix", "Battle Body Fix 5"]
-scripts.each_with_index do |(id, title, code), i|
-  next unless wanted.any?{|w| title.include?(w)}
+puts "scripts count=#{scripts.size}"
+scripts.each_with_index do |(id, title, code), idx|
   dec = Zlib::Inflate.inflate(code) rescue code
-  dec = dec.force_encoding("UTF-8")
-  puts "="*80
-  puts "INDEX #{i} ID=#{id} TITLE=#{title.inspect}"
-  puts "="*80
-  puts dec
-  puts "\n"
+  puts "#{idx}: id=#{id} title=#{title.inspect} dec_len=#{dec.bytesize}"
+end
+idx = scripts.index{|a| a[1].include?("Battle Body")}
+puts "Battle Body idx=#{idx.inspect}"
+if idx
+  dec = Zlib::Inflate.inflate(scripts[idx][2]) rescue scripts[idx][2]
+  puts dec.force_encoding('UTF-8')[0,12000]
 end

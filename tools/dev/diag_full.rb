@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+# repo-root shim (repo cleanup): run this script from any working
+# directory; all relative "Data/..." paths resolve to the project root.
+Dir.chdir(File.expand_path("../..", __dir__)) unless File.directory?("Data")
 # encoding: utf-8
 # Proper stubs for RPG VX Ace Marshal loading - based on black_diag success pattern
 class Table; def self._load(s); o=allocate; o.instance_variable_set(:@_raw,s); o; end; def _dump(l); @_raw||""; end; end

@@ -1,4 +1,7 @@
 # encoding: utf-8
+# repo-root shim (repo cleanup): run this script from any working
+# directory; all relative "Data/..." paths resolve to the project root.
+Dir.chdir(File.expand_path("../..", __dir__)) unless File.directory?("Data")
 require "zlib"
 data = File.binread("Data/Scripts.rvdata2")
 scripts = Marshal.load(data)

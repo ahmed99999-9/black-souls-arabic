@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+# repo-root shim (repo cleanup): run this script from any working
+# directory; all relative "Data/..." paths resolve to the project root.
+Dir.chdir(File.expand_path("../..", __dir__)) unless File.directory?("Data")
 # encoding: utf-8
 class Table; def self._load(s); o=allocate; o.instance_variable_set(:@_raw,s); o; end; def _dump(l); @_raw||""; end; end
 class Color; def self._load(s); allocate; end; def _dump(l); ""; end; def initialize(*a); end; end

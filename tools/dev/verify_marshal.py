@@ -1,3 +1,7 @@
+# repo-root shim (repo cleanup): resolve relative paths to the project root.
+import os as _os
+if not _os.path.isdir("Data"):
+    _os.chdir(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", ".."))
 # Binary-level verification WITHOUT a full Marshal parser: 
 # directly scan every Data/*.rvdata2 for known structural invariants.
 # We avoid the Python Marshal parser entirely and just grep the raw bytes.
